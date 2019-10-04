@@ -1,5 +1,7 @@
 /* Array.prototype.map - Exercice 3
 
+
+
 Ecrire une fonction getMoviesFreshness qui reçoit comme un argument un tableau
 d'objets représentant des films.
 Chaque film a deux propriétés:
@@ -60,9 +62,20 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  let cine = movies.map((movie) => {
+    if (movie.rating < 60) {
+      return movie.label = "rotten"
+    }
+    else if(movie.rating > 75) {
+      return movie.label = "certified fresh"
+    } else {
+        return movie.label = "fresh"
+    }
+  }) 
+  return movies
 }
 
 
 
-// Ne pas modifier l'export
-module.exports = getMoviesFreshness;
+  // Ne pas modifier l'export
+  module.exports = getMoviesFreshness;
